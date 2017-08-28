@@ -17,13 +17,11 @@ GPIO.setup(18, GPIO.OUT) ## GPIO 18 como salida
 
 def blink():
         print "Ejecución de la función blink..."
-        iteracion = 0
         for iteracion in range(10): ## Segundos que durara la funcion
                 GPIO.output(18, True) ## Enciendo el 18
-                time.sleep(0.5) ## Esperamos 1 segundo
+                time.sleep(0.5) ## Esperamos 0.5 segundo
                 GPIO.output(18, False) ## Apago el 18
-                time.sleep(0.5) ## Esperamos 1 segundo
-                iteracion = iteracion + 1 
+                time.sleep(0.5) ## Esperamos 0.5 segundo
                 print(iteracion)
         print "Ejecucion de la función blink finalizada"
         GPIO.cleanup() ## Hago una limpieza de los GPIO
