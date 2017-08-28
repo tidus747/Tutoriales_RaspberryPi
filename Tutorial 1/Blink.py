@@ -5,6 +5,7 @@ This software is distributed under the GNU General Public
 Licence (version 3 or later); please refer to the file
 Licence.txt, included with the software, for details.
 '''
+# Tutorial creado para el canal de YouTube Piensa 3D
 
 # Tutorial 1: Blink con el GPIO 18
 
@@ -17,7 +18,7 @@ GPIO.setup(18, GPIO.OUT) ## GPIO 18 como salida
 def blink():
         print "Ejecución de la función blink..."
         iteracion = 0
-        while iteracion < 10: ## Segundos que durara la funcion
+        for iteracion in range(10): ## Segundos que durara la funcion
                 GPIO.output(18, True) ## Enciendo el 18
                 time.sleep(0.5) ## Esperamos 1 segundo
                 GPIO.output(18, False) ## Apago el 18
