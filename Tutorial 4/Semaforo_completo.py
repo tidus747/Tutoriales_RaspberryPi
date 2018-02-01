@@ -33,36 +33,36 @@ tiempoCruce = 3
 
 
 def cambioSemaforo():
-        print "Parando el tráfico ..."
-        GPIO.output(verde, False)
-        GPIO.output(amarillo, True)
-        time.sleep(2)
-        
-        GPIO.output(amarillo, False)
-        GPIO.output(rojo, True)
-        time.sleep(1)
-        
-        GPIO.output(rojo_peaton, False)
-        GPIO.output(verde_peaton, True)
-        time.sleep(TiempoCruce)
-        
-        for i in range(10):
-			GPIO.output(verde_peaton, True)
-			time.sleep(0.25)
-			GPIO.output(verde_peaton, False)
-			time.sleep(0.25)
-			
-		GPIO.output(peaton_rojo, True)
-		time.sleep(0.5)
+	print "Parando el tráfico ..."
+	GPIO.output(verde, False)
+	GPIO.output(amarillo, True)
+	time.sleep(2)
+	
+	GPIO.output(amarillo, False)
+	GPIO.output(rojo, True)
+	time.sleep(1)
+	
+	GPIO.output(rojo_peaton, False)
+	GPIO.output(verde_peaton, True)
+	time.sleep(TiempoCruce)
+	
+	for i in range(10):
+		GPIO.output(verde_peaton, True)
+		time.sleep(0.25)
+		GPIO.output(verde_peaton, False)
+		time.sleep(0.25)
 		
-		GPIO.output(amarillo, True)
-		GPIO.output(rojo, False)
-		time.sleep(1)
-		
-		GPIO.output(verde, True)
-		GPIO.output(amarillo, False)
-		
-		return tiempoCambio = time.clock()
+	GPIO.output(peaton_rojo, True)
+	time.sleep(0.5)
+	
+	GPIO.output(amarillo, True)
+	GPIO.output(rojo, False)
+	time.sleep(1)
+	
+	GPIO.output(verde, True)
+	GPIO.output(amarillo, False)
+	
+	return tiempoCambio = time.clock()
 		
 		
         
