@@ -44,7 +44,7 @@ def cambioSemaforo():
 	
 	GPIO.output(rojo_peaton, False)
 	GPIO.output(verde_peaton, True)
-	time.sleep(TiempoCruce)
+	time.sleep(tiempoCruce)
 	
 	for i in range(10):
 		GPIO.output(verde_peaton, True)
@@ -52,7 +52,7 @@ def cambioSemaforo():
 		GPIO.output(verde_peaton, False)
 		time.sleep(0.25)
 		
-	GPIO.output(peaton_rojo, True)
+	GPIO.output(rojo_peaton, True)
 	time.sleep(0.5)
 	
 	GPIO.output(amarillo, True)
@@ -62,17 +62,25 @@ def cambioSemaforo():
 	GPIO.output(verde, True)
 	GPIO.output(amarillo, False)
 	
-	return tiempoCambio = time.clock()
+	tiempoCambio = time.clock()
+	return tiempoCambio 
 		
 		
         
          
 # Código principal desde el que usamos todas las funciones
+GPIO.output(verde,True)
+GPIO.output(amarillo, False)
+GPIO.output(rojo,False)
+
+GPIO.output(verde_peaton,False)
+GPIO.output(rojo_peaton,True)
+
 while True:
     estado = GPIO.input(pulsador)
 
-    if (estado == 1 && (time.clock() - tiempoCambio) > 5):
-		cambioSemaforo()
+    if (estado == 1 and (time.clock() - tiempoCambio) > 5):
+		tiempoCambio=cambioSemaforo()
 
 print("Limpiando la configuración de los GPIO")
 GPIO.cleanup() ## Hago una limpieza de los GPIO
