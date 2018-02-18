@@ -12,6 +12,8 @@ Licence.txt, included with the software, for details.
 #importamos los módulos necesarios para nuestro código 
 import RPi.GPIO as GPIO
 import time
+import numpy as np
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.OUT) ## GPIO 4 
 GPIO.setup(17, GPIO.OUT) ## GPIO 17 
@@ -41,7 +43,7 @@ def Encender_Leds():
 # Código principal desde el que usamos todas las funciones
 Apagar_Leds()
 
-for j in range(20):
+for j in range(50):
 	Encender_Leds()
 
 print("Limpiando la configuración de los GPIO")
