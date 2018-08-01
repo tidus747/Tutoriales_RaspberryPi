@@ -37,10 +37,10 @@ def Encender_leds():
 		GPIO.output(Leds[len(Leds)-i-1],False)
 
 # Código principal desde el que usamos todas las funciones
-Apagar_Leds()
+Apagar_led()
 
 for j in range(50):
-	Encender_Leds()
+	Encender_leds()
 
 print("Limpiando la configuración de los GPIO")
 GPIO.cleanup() ## Hago una limpieza de los GPIO
