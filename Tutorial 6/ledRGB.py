@@ -37,9 +37,18 @@ def Encender_leds(Leds):
 		GPIO.output(Leds[len(Leds)-i-1],False)
 
 def Encender_mix_rgb(r,g,b, Colores):
-    GPIO.PWM(Colores[0], r)
-    GPIO.PWM(Colores[1], g)
-    GPIO.PWM(Colores[2], b)
+    if (r > 0):
+        GPIO.output(Colores[0],True)
+    else:
+        GPIO.output(Colores[0],False)
+    if (g > 0):
+        GPIO.output(Colores[1],True)
+    else:
+        GPIO.output(Colores[1],False)
+    if (b > 0):
+        GPIO.output(Colores[2],True)
+    else:
+        GPIO.output(Colores[2],False)
     return 0
 
 # Código principal desde el que usamos todas las funciones
@@ -49,13 +58,13 @@ for j in range(10):
 	Encender_leds(Colores)
 
 # Encendemos el color Cyan
-Encender_mix_rgb(0.1,80,80, Colores)
+Encender_mix_rgb(0,1,1, Colores)
 time.sleep(3)
 # Encendemos el color Amarillo
-Encender_mix_rgb(80,80,0.1, Colores)
+Encender_mix_rgb(1,1,0, Colores)
 time.sleep(3)
 # Encendemos el color Magenta
-Encender_mix_rgb(80,0.1,80, Colores)
+Encender_mix_rgb(1,0,1, Colores)
 time.sleep(3)
 
 
