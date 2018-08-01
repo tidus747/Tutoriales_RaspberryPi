@@ -49,13 +49,13 @@ for j in range(10):
 	Encender_leds(Colores)
 
 # Encendemos el color Cyan
-Encender_mix_rgb(0,80,80, Colores)
+Encender_mix_rgb(0.1,80,80, Colores)
 time.sleep(3)
 # Encendemos el color Amarillo
-Encender_mix_rgb(80,80,0, Colores)
+Encender_mix_rgb(80,80,0.1, Colores)
 time.sleep(3)
 # Encendemos el color Magenta
-Encender_mix_rgb(80,0,80, Colores)
+Encender_mix_rgb(80,0.1,80, Colores)
 time.sleep(3)
 
 
