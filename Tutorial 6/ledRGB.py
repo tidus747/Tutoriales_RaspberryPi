@@ -66,7 +66,9 @@ time.sleep(3)
 # Encendemos el color Magenta
 Encender_mix_rgb(1,0,1, Colores)
 time.sleep(3)
-
+# Encendemos el color Blanco
+Encender_mix_rgb(1,1,1, Colores)
+time.sleep(3)
 
 print("Limpiando la configuración de los GPIO")
 GPIO.cleanup() ## Hago una limpieza de los GPIO
