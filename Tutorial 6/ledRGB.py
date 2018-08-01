@@ -21,12 +21,12 @@ GPIO.setup(18, GPIO.OUT) ## Color Azul
 
 Colores = np.array([14,15,18])
 
-def Apagar_led():
+def Apagar_led(Leds):
     for i in range(len(Leds)):
         GPIO.output(Leds[i],False)
     return 0
 
-def Encender_leds():
+def Encender_leds(Leds):
 	for i in range(len(Leds)):
 		GPIO.output(Leds[i],True)
 		time.sleep(0.05)
@@ -37,10 +37,10 @@ def Encender_leds():
 		GPIO.output(Leds[len(Leds)-i-1],False)
 
 # Código principal desde el que usamos todas las funciones
-Apagar_led()
+Apagar_led(Colores)
 
 for j in range(50):
-	Encender_leds()
+	Encender_leds(Colores)
 
 print("Limpiando la configuración de los GPIO")
 GPIO.cleanup() ## Hago una limpieza de los GPIO
