@@ -9,34 +9,41 @@ Licence.txt, included with the software, for details.
 # Tutorial creado para el canal de YouTube Piensa 3D
 # Tutorial 7: Control de un led por línea de comandos
 
+import RPi.GPIO as GPIO
+import numpy
+
 def led_on(Colores, menu):
-    menu.epilogue_text = "Hemos encendido el led"
+    menu.epilogue_text = "Hemos encendido el led en blanco"
+    for i in range(len(Colores)):
+        GPIO.output(Colores[i],True)
     return 0
 
 def led_off(Colores, menu):
     menu.epilogue_text = "Hemos apagado el led"
+    for i in range(len(Colores)):
+        GPIO.output(Colores[i],False)
     return 0
 
-def led_on_red(Colores):
+def led_on_red(Colores, menu):
     GPIO.output(Colores[0],True)
     return 0
 
-def led_off_red(Colores):
+def led_off_red(Colores, menu):
     GPIO.output(Colores[0],True)
     return 0
 
-def led_on_green(Colores):
+def led_on_green(Colores, menu):
     GPIO.output(Colores[1],True)
     return 0
 
-def led_off_green(Colores):
+def led_off_green(Colores, menu):
     GPIO.output(Colores[1],True)
     return 0
 
-def led_on_blue(Colores):
+def led_on_blue(Colores, menu):
     GPIO.output(Colores[2],True)
     return 0
 
-def led_off_blue(Colores):
+def led_off_blue(Colores, menu):
     GPIO.output(Colores[2],True)
     return 0
