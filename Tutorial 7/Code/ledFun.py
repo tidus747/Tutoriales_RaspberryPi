@@ -25,25 +25,31 @@ def led_off(Colores, menu):
     return 0
 
 def led_on_red(Colores, menu):
+    menu.epilogue_text = "Hemos encendido el led rojo"
     GPIO.output(Colores[0],True)
     return 0
 
 def led_off_red(Colores, menu):
+    menu.epilogue_text = "Hemos apagado el led rojo"
     GPIO.output(Colores[0],False)
     return 0
 
 def led_on_green(Colores, menu):
+    menu.epilogue_text = "Hemos encendido el led verde"
     GPIO.output(Colores[1],True)
     return 0
 
 def led_off_green(Colores, menu):
+    menu.epilogue_text = "Hemos apagado el led verde"
     GPIO.output(Colores[1],False)
     return 0
 
 def led_on_blue(Colores, menu):
+    menu.epilogue_text = "Hemos encendido el led azul"
     GPIO.output(Colores[2],True)
     return 0
 
 def led_off_blue(Colores, menu):
+    menu.epilogue_text = "Hemos apagado el led azul"
     GPIO.output(Colores[2],False)
     return 0
