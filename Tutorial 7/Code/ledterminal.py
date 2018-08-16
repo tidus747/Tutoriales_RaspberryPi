@@ -16,6 +16,12 @@ from consolemenu.items import *
 import numpy as np
 from ledFun import *
 
+# Inicializamos los GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(14, GPIO.OUT) ## Color Rojo
+GPIO.setup(15, GPIO.OUT) ## Color Verde
+GPIO.setup(18, GPIO.OUT) ## Color Azul
+
 # Definimos los colores del led
 Colores = np.array([14,15,18]) # Es importante que el orden sea RGB
 
