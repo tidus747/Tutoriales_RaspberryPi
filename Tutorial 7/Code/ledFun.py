@@ -29,7 +29,7 @@ def led_on_red(Colores, menu):
     return 0
 
 def led_off_red(Colores, menu):
-    GPIO.output(Colores[0],True)
+    GPIO.output(Colores[0],False)
     return 0
 
 def led_on_green(Colores, menu):
@@ -37,7 +37,7 @@ def led_on_green(Colores, menu):
     return 0
 
 def led_off_green(Colores, menu):
-    GPIO.output(Colores[1],True)
+    GPIO.output(Colores[1],False)
     return 0
 
 def led_on_blue(Colores, menu):
@@ -45,5 +45,5 @@ def led_on_blue(Colores, menu):
     return 0
 
 def led_off_blue(Colores, menu):
-    GPIO.output(Colores[2],True)
+    GPIO.output(Colores[2],False)
     return 0
