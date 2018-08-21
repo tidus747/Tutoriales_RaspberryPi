@@ -10,7 +10,7 @@ Licence.txt, included with the software, for details.
 # Tutorial 7: Control de un led por línea de comandos
 
 import RPi.GPIO as GPIO
-import numpy
+import numpy as np
 
 def led_on(Colores):
     for i in range(len(Colores)):
