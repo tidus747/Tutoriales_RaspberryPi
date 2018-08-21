@@ -17,7 +17,7 @@ except ImportError:
 
 import Tkinter as tk
 import GUI_support
-import ledFun as led
+from ledFun import *
 
 # Inicializamos los GPIO
 GPIO.setmode(GPIO.BCM)
@@ -118,42 +118,42 @@ class RGB_LED_Mixer:
     def applyColors(self,r,g,b):
         if (r == 0 and g == 0 and b == 0 ):
             self.changeImage("apagado")
-            led.led_off()
+            led_off(Colores)
         if (r == 0 and g == 0 and b == 1 ):
             self.changeImage("azul")
-            led.led_off_red()
-            led.led_off_green()
-            led.led_on_blue()
+            led_off_red(Colores)
+            led_off_green(Colores)
+            led_on_blue(Colores)
         if (r == 0 and g == 1 and b == 0 ):
             self.changeImage("verde")
-            led.led_off_red()
-            led.led_on_green()
-            led.led_off_blue()
+            led_off_red(Colores)
+            led_on_green(Colores)
+            led_off_blue(Colores)
         if (r == 0 and g == 1 and b == 1 ):
             self.changeImage("cyan")
-            led.led_off_red()
-            led.led_on_green()
-            led.led_on_blue()
+            led_off_red(Colores)
+            led_on_green(Colores)
+            led_on_blue(Colores)
         if (r == 1 and g == 0 and b == 0 ):
             self.changeImage("rojo")
-            led.led_on_red()
-            led.led_off_green()
-            led.led_off_blue()
+            led_on_red(Colores)
+            led_off_green(Colores)
+            led_off_blue(Colores)
         if (r == 1 and g == 0 and b == 1 ):
             self.changeImage("violeta")
-            led.led_on_red()
-            led.led_off_green()
-            led.led_on_blue()
+            led_on_red(Colores)
+            led_off_green(Colores)
+            led_on_blue(Colores)
         if (r == 1 and g == 1 and b == 0 ):
             self.changeImage("amarillo")
-            led.led_on_red()
-            led.led_on_green()
-            led.led_off_blue()
+            led_on_red(Colores)
+            led_on_green(Colores)
+            led_off_blue(Colores)
         if (r == 1 and g == 1 and b == 1 ):
             self.changeImage("blanco")
-            led.led_on_red()
-            led.led_on_green()
-            led.led_on_blue()
+            led_on_red(Colores)
+            led_on_green(Colores)
+            led_on_blue(Colores)
         return
 
     def changeImage(self,name):
