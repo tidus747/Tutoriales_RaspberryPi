@@ -9,7 +9,6 @@ Iván Rodríguez 2018
 '''
 
 import sys
-import tkinter
 
 try:
     from Tkinter import *
@@ -18,6 +17,16 @@ except ImportError:
 
 import Tkinter as tk
 import GUI_support
+import ledFun as led
+
+# Inicializamos los GPIO
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(14, GPIO.OUT) ## Color Rojo
+GPIO.setup(15, GPIO.OUT) ## Color Verde
+GPIO.setup(18, GPIO.OUT) ## Color Azul
+
+# Definimos los colores del led
+Colores = np.array([14,15,18]) # Es importante que el orden sea RGB
 
 def App():
 
@@ -109,20 +118,42 @@ class RGB_LED_Mixer:
     def applyColors(self,r,g,b):
         if (r == 0 and g == 0 and b == 0 ):
             self.changeImage("apagado")
+            led.led_off()
         if (r == 0 and g == 0 and b == 1 ):
             self.changeImage("azul")
+            led.led_off_red()
+            led.led_off_green()
+            led.led_on_blue()
         if (r == 0 and g == 1 and b == 0 ):
             self.changeImage("verde")
+            led.led_off_red()
+            led.led_on_green()
+            led.led_off_blue()
         if (r == 0 and g == 1 and b == 1 ):
             self.changeImage("cyan")
+            led.led_off_red()
+            led.led_on_green()
+            led.led_on_blue()
         if (r == 1 and g == 0 and b == 0 ):
             self.changeImage("rojo")
+            led.led_on_red()
+            led.led_off_green()
+            led.led_off_blue()
         if (r == 1 and g == 0 and b == 1 ):
             self.changeImage("violeta")
+            led.led_on_red()
+            led.led_off_green()
+            led.led_on_blue()
         if (r == 1 and g == 1 and b == 0 ):
             self.changeImage("amarillo")
+            led.led_on_red()
+            led.led_on_green()
+            led.led_off_blue()
         if (r == 1 and g == 1 and b == 1 ):
             self.changeImage("blanco")
+            led.led_on_red()
+            led.led_on_green()
+            led.led_on_blue()
         return
 
     def changeImage(self,name):
