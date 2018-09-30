@@ -7,7 +7,7 @@ Licence.txt, included with the software, for details.
 '''
 
 # Tutorial creado para el canal de YouTube Piensa 3D
-# Tutorial 7: Control de un led por línea de comandos
+# Tutorial 8: Control de un led con GUI
 
 import RPi.GPIO as GPIO
 import numpy as np

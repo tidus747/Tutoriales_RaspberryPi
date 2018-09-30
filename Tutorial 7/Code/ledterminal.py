@@ -11,8 +11,7 @@ Licence.txt, included with the software, for details.
 # Importamos todos los módulos que son necesarios
 from consolemenu import *
 from consolemenu.items import *
-#import RPi.GPIO as GPIO
-#import time
+
 import numpy as np
 from ledFun import *
 
